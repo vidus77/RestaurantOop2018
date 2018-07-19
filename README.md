@@ -90,6 +90,7 @@ Az Identity nagyon csábító megoldást mutat: elindítom az alkamazást, és n
 valahogy elérni, hogy ne automatikusan hozza létre az adatbázist, hanem legyen rá hatásunk. 
 - [x] mikor hozza létre? 
 - [x] hova hozza létre? 
+- [x] át lehet nevezni?
 - [ ] saját adatokat is el lehet benne helyezni? 
  
  ``` 
@@ -183,3 +184,6 @@ Applying explicit migration: 201807182055455_Identity datamodel.
 Running Seed method.
 ``` 
 
+```
+
+```
