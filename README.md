@@ -160,4 +160,25 @@ ezt az adatbázist hozza létre:
 ![adatbázis szerkezet](img/ASP.NET-Identity-Db-Schema.png) 
  
 Az adatbázis a saját gépen a **Default SQL Instance**-ra kerül, a neve pedig **DefaultConnection**. 
-  
+
+
+#### Saját adatbázis megadása 
+Készítünk egy kapcsolati beállítást a [https://www.connectionstrings.com/](https://www.connectionstrings.com/) segítségével. 
+ 
+```xml 
+<connectionStrings> 
+    <add name="DefaultConnection" connectionString="Server=.\SQLEXPRESS;Database=OopRestaurantDb;Trusted_Connection=True" 
+         providerName="System.Data.SqlClient" /> 
+</connectionStrings> 
+``` 
+ 
+Fontos, hogy megadjuk a szerver nevét, az adatbázis nevét, és a módszert, ahogy a felhasználó bejelentkezik. 
+ 
+``` 
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201807181846560_InitialCreate, 201807182055455_Identity datamodel].
+Applying explicit migration: 201807181846560_InitialCreate.
+Applying explicit migration: 201807182055455_Identity datamodel.
+Running Seed method.
+``` 
