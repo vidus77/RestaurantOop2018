@@ -2,12 +2,14 @@
 Restaurant második nekifutás
 Sajnos az előző próbálkozás a régi gépen nem volt sikeres
 
+- Markdown [Extension](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor) felhasználásával 
+
 OopRestaurant201807
 
 A NetAcadémia "Betekintés az objektumorientált programozásba a weben is: az étterem projekt" tanfolyamának kódtára
 ASP.NET MVC és varázslói
 ASP.NET Identity
-
+```
     Felhasználók                                             Webalkalmazás
 
 +----------------------------+                            +-------------------------------------------+
@@ -35,7 +37,8 @@ ASP.NET Identity
 +----------------------------+                            |                                           |
                                                           |                                           |
                                                           +-------------------------------------------+
-
+```
+  
 Ez egyáltalán nem triviális feladat: azonosítás és jogosultságkezelés
 Azonosítás
 
@@ -185,5 +188,37 @@ Running Seed method.
 ``` 
 
 ```
+A kódban lévő módosító lépések                                    Az adatbázisban lévő módosító lépések
+
++-------------------------------------+                           +---------------------------------+
+|                                     |                           |                                 |
+|                                     |   A hiányzó lépések       |                                 |
+|  A \Migrations mappa alatt lévő     |   kerülnek az adatbázisba |                                 |
+|  egyes lépések állományai           |                           |  A __MigrationHistory táblában  |
+|                                     |                           |  lévő sorok                     |
+|                                     |    update-database        |                                 |
+|                                     |                           |                                 |
+|                                     |  +--------------------->  |                                 |
+|                                     |                           |                                 |
+|                                     |  Ez a migration step-ben  |                                 |
+|                                     |  lévő köztes nyelvből     |                                 |
+|                                     |  az adatbázisnak megfelelő|                                 |
+|                                     |  SQL scriptet gyárt, majd |                                 |
+|                                     |  lefuttatja az SQL        |                                 |
+|                                     |  szerveren                |                                 |
+|                                     |                           |                                 |
+|                                     |                           |                                 |
+|                                     |                           |                                 |
+|                                     |                           |                                 |
+|    ^                                |                           |                                 |
+|    |                                |                           |                                 |
++-------------------------------------+                           +---------------------------------+
+     |
+     |
+     +
+
+   A modell módosítása után,
+   az add-migration paranccal készülnek
+   a módosító lépések
 
 ```
